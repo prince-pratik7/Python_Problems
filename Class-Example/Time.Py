@@ -50,4 +50,5 @@ def main():
     t4=t1+360
     print(t4)
 
-main()
+if __name__=='__main__':
+  main()
