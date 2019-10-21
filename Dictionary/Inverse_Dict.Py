@@ -14,18 +14,17 @@ def make_dict(string):
 def print_dict(d):
     
     print("Key\tValue")
-    for key in d:
-        print(key,'\t',d[key])
+    for key,value in d.items():
+        print(key,'\t',value)
 
 
 def inverse_dict(d):
     inverse=dict()
-    for key in d:
-        val=d[key]
-        if val not in inverse:
-            inverse[val]=[key]
+    for key,value in d.items():
+        if value not in inverse:
+            inverse[value]=[key]
         else:
-            inverse[val].append(key)
+            inverse[value].append(key)
     return inverse
 
 
