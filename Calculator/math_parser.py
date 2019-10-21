@@ -55,10 +55,14 @@ def calc(n2, n1, operator):
     n1 Number: Number 1
     operator Char: Operation to calculate
     """
-    if operator == '-': return n1 - n2
-    elif operator == '+': return n1 + n2
-    elif operator == '*': return n1 * n2
-    elif operator == '/': return n1 / n2
+    try:
+        if operator == '-': return n1 - n2
+        elif operator == '+': return n1 + n2
+        elif operator == '*': return n1 * n2
+        elif operator == '/': return n1 / n2
+    except ArithmeticError:
+        return ("Error: Cannot divide by 0")
+
     return 0
 
 def apply_operation(op_stack, out_stack):
@@ -118,3 +122,23 @@ def evaluate(expression):
         apply_operation(op_stack, out_stack)
 
     return out_stack[-1]
+    
+#-------------------TESTS--------------------#
+
+## test1
+print("TEST #1")
+exp = "2452 * (3 * 6.5 + 1) * 6 / 235"
+print("Expression:", exp)
+print("Parsed expression:", parse(exp))
+print("Evaluation result:", evaluate(exp))
+print()
+
+
+## test2
+print("TEST #2")
+exp = "1 / 0"
+print("Expression:", exp)
+print("Parsed expression:", parse(exp))
+print("Evaluation result:", evaluate(exp))
+
+
