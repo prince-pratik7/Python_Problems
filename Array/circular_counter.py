@@ -9,19 +9,21 @@ Input: consider 123456789 members sitting in a circular fashion,
 Output: 369485271
 """
 
-a = ['1','2','3','4','5','6','7','8','9']
+a = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
+
 
 def josepheus(int_list, skip):
-  skip = skip - 1 #list starts with 0 index
-  idx = 0
-  len_list = (len(int_list))
-  while len_list>0:
-    idx = (skip+idx)%len_list #hashing to keep changing the index to every 3rd
-    print(int_list.pop(idx))
-    len_list -= 1
+    skip = skip - 1  # list starts with 0 index
+    idx = 0
+    result = []
+    while int_list:
+        idx = (skip + idx) % len(int_list)
+        result.append((int_list.pop(idx)))
+        print(int_list)
+    return result
 
 
-josepheus(a,3)
+print(josepheus(a, 3))
 
 """
 the reason for hashing is that we have to find the index of the item which needs to be removed.
