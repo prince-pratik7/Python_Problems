@@ -1,5 +1,5 @@
 '''https://en.wikipedia.org/wiki/Ackermann_function
-   It is a non primitive recurssion'''
+   It is a non primitive recursion'''
 
 def A(m,n):
     if m==0:
