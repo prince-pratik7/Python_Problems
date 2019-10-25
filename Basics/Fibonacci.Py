@@ -1,4 +1,7 @@
-
+'''
+https://en.wikipedia.org/wiki/Fibonacci_number
+Prints Fibonacci sequence up to 100.
+'''
 
 def fibonacci(n):
     a=0
@@ -10,5 +13,4 @@ def fibonacci(n):
         b=b+a
         a=temp
         
-
 fibonacci(100)
